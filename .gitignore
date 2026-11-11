@@ -1,0 +1,13 @@
+# Django
+backend/.env
+backend/venv/
+backend/__pycache__/
+backend/**/*.pyc
+backend/staticfiles/
+
+# Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*
+!frontend/.env.example
