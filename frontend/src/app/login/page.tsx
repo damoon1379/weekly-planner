@@ -4,6 +4,7 @@ import {useState} from 'react'
 import {useRouter} from 'next/navigation'
 import { useAuth } from '@/context/AuthContext'
 import { loginUser } from '@/lib/auth'
+import Link from 'next/link'
 
 export default function LoginPage(){
     const [username,setUsername] = useState('')
@@ -31,7 +32,7 @@ export default function LoginPage(){
     }
 
     return (
-    <main className="min-h-screen flex items-center justify-center">
+    <main className="min-h-screen flex flex-col items-center justify-center">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-80">
         <h1 className="text-2xl font-bold">Login</h1>
 
@@ -58,7 +59,12 @@ export default function LoginPage(){
         </button>
 
         {error && <p className="text-red-500">{error}</p>}
+        <p>
+        Don't have an account?{" "}
+        <Link className='text-blue-500' href="/register">Register</Link>
+        </p>
       </form>
+      
     </main>
   );
 }

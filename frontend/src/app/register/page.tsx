@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { registerUser } from "@/lib/auth"
+import Link from "next/link"
 
 export default function RegisterPage(){
     const [username, setUsername] = useState('')
@@ -59,6 +60,10 @@ export default function RegisterPage(){
         </button>
 
         {error && <p className="text-red-500">{error}</p>}
+        <p>
+        Already have an account?{" "}
+        <Link className="text-blue-500" href="/login">Login</Link>
+        </p>
             </form>
         </main>
     )
