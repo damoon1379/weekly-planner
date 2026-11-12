@@ -72,7 +72,7 @@ The frontend communicates with the Django REST API using HTTP requests. Authenti
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/damoon1379/weekly-planner/tree/main
+git clone https://github.com/damoon1379/weekly-planner.git
 cd weekly-planner
 ```
 
