@@ -5,6 +5,11 @@ from accounts.views import (
     CookieTokenRefreshView,
 )
 
+from drf_spectacular.view import (
+SpectacularAPIView,
+SpectacularSwaggerView,
+)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -13,5 +18,13 @@ urlpatterns = [
 
     path('api/token/', CookieTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', CookieTokenRefreshView.as_view(), name='token_refresh'),
+
+    path('api/schema/',
+         SpectacularAPIView.as_view(),
+         name='schema'),
+    path('api/docs/',
+         SpectacularSwaggerView.as_view(url_name='schema'),
+         name='swagger-ui',
+        ),
   
 ]
