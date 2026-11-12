@@ -5,7 +5,7 @@ from accounts.views import (
     CookieTokenRefreshView,
 )
 
-from drf_spectacular.view import (
+from drf_spectacular.views import (
 SpectacularAPIView,
 SpectacularSwaggerView,
 )
