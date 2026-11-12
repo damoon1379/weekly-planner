@@ -76,7 +76,8 @@ INSTALLED_APPS = [
     'planner',
     'rest_framework',
     'corsheaders',
-    'rest_framework_simplejwt.token_blacklist'
+    'rest_framework_simplejwt.token_blacklist',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -124,7 +125,13 @@ REST_FRAMEWORK ={
         "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ],
+    "DEFAULT_SCHEMA_CLASS":
+    'drf_spectacular.openapi.AutoSchema',
 }
+SPECTACULAR_SETTINGS={
+    'TITLE':'Weekly Planner API',
+    'DESCRIPTION':'API documentation for Weekly Planner',
+    'VERSION':'1.0.0',}
 
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
